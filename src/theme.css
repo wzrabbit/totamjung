@@ -10,6 +10,22 @@
     --tab-hover-color: rgb(209, 176, 114, 0.6);
     --menu-line-color: rgb(105, 65, 50);
     --bright-menu-line-color: rgb(161, 115, 98);
+    --button-red: rgb(105, 42, 42);
+    --button-dark: rgb(51, 32, 63);
+    --button-darkblue: rgb(34, 32, 63);
+    --button-mint: rgb(39, 73, 70);
+    --table-notice-color-light: rgb(0, 49, 8);
+    --table-notice-color-dark: rgb(0, 34, 6);
+    --table-contest-color-light: rgb(4, 0, 58);
+    --table-contest-color-dark: rgb(2, 0, 37);
+    --glyphicon-like-color: rgb(0, 255, 98);
+    --glyphicon-unlike-color: rgb(255, 0, 0);
+    --gradient-black: linear-gradient(
+        to right,
+        rgb(0, 0, 0, 0.4) 0%, 
+        rgb(0, 0, 0, 0.4) 35%,
+        transparent 80%
+    );
 
     --tc-red: rgb(238, 0, 0);
     --tc-yellow: rgb(221, 204, 0);
@@ -35,8 +51,6 @@
     --at-gray: gray;
 }
 
-/* 태그 설정 */
-
 html[theme='totamjung'] p,
 html[theme='totamjung'] div,
 html[theme='totamjung'] li,
@@ -50,6 +64,10 @@ html[theme='totamjung'] .btn-link {
     color: var(--link-color);
 }
 
+html[theme='totamjung'] li a.highlight {
+    color: var(--link-color) !important;
+}
+
 html[theme='totamjung'] h1,
 html[theme='totamjung'] h2,
 html[theme='totamjung'] h3,
@@ -61,11 +79,17 @@ html[theme='totamjung'] h6 {
 }
 
 html[theme='totamjung'] input,
-html[theme='totamjung'] select {
+html[theme='totamjung'] select,
+html[theme='totamjung'] textarea {
     background-color: var(--menu-color) !important;
     border-color: var(--bright-menu-line-color) !important;
     color: var(--text-color) !important;
 }
+
+input[type='checkbox'],
+input[type='radio'] {
+    filter: invert(100%) hue-rotate(18deg) brightness(1.0);
+  }
 
 html[theme='totamjung'] button[type='submit'],
 html[theme='totamjung'] button[type='submit']:hover,
@@ -79,6 +103,26 @@ html[theme='totamjung'] .btn-u {
     border: none;
     box-shadow: 0 0 13px var(--menu-color);
     color: var(--text-color);
+}
+
+html[theme='totamjung'] .pace-progress {
+    background: var(--title-color);
+    box-shadow: 0 0 20px var(--title-color);
+    transition: 0.1s;
+}
+
+html[theme='totamjung'] .btn {
+    border: none;
+    box-shadow: 0 0 13px var(--menu-color);
+}
+
+html[theme='totamjung'] .btn.btn-link.copy-button {
+    box-shadow: none;
+}
+
+html[theme='totamjung'] blockquote {
+    background: var(--gradient-black);
+    border-left-color: var(--title-color);
 }
 
 html[theme='totamjung'] .datepicker {
@@ -120,6 +164,10 @@ html[theme='totamjung'] select:focus {
 
 html[theme='totamjung'] form {
     border: none;
+}
+
+html[theme='totamjung'] form fieldset {
+    background-color: var(--menu-color);
 }
 
 html[theme='totamjung'] hr,
@@ -169,18 +217,55 @@ html[theme='totamjung'] .footer {
     box-shadow: 10px 0px 30px var(--menu-color);
 }
 
+html[theme='totamjung'] .mega-menu-content {
+    border-top-color: var(--menu-link-color);
+}
+
 html[theme='totamjung'] .mega-menu-content > .container > .row.equal-height {
-    background-color: var(--menu-color);
+    border-top: 2px solid var(--link-color);
+}
+
+html[theme='totamjung'] .mega-menu-content .equal-height-in:nth-child(odd) {
     border: none;
+    background-color: var(--menu-color);
+}
+
+html[theme='totamjung'] .mega-menu-content .equal-height-in:nth-child(even) {
+    border: none;
+    background-color: var(--secondary-menu-color);
+}
+
+html[theme='totamjung'] .mega-menu-content .equal-height-in a:hover {
+    background-color: var(--menu-line-color) !important;
+}
+
+html[theme='totamjung'] ul.dropdown-menu {
+    border: none;
+    background-color: var(--menu-color);
+}
+
+html[theme='totamjung'] .dropdown-menu .divider {
+    background-color: var(--menu-line-color);
+}
+
+html[theme='totamjung'] .dropdown-menu > li {
+    box-shadow: 0 0 13px var(--menu-color);
+}
+
+html[theme='totamjung'] .dropdown-menu > li > a {
+    transition: 0.2s;
+}
+
+html[theme='totamjung'] .dropdown-menu > li > a:hover,
+html[theme='totamjung'] .dropdown-menu > li > a:focus {
+    color: var(--menu-color);
+    text-decoration: none;
+    background-color: var(--title-color);
 }
 
 html[theme='totamjung'] .header .dropdown-menu li a {
     background-color: transparent;
     color: var(--link-color);
-}
-
-html[theme='totamjung'] .header .dropdown-menu li a:hover {
-    background-color: var(--secondary-menu-color) !important;
 }
 
 html[theme='totamjung'] .nav.navbar-nav > li > a {
@@ -193,12 +278,20 @@ html[theme='totamjung'] .nav.navbar-nav li:hover > a {
     border-bottom-color: var(--link-color);
 }
 
+@media (max-width: 991px) {
+    html[theme='totamjung'] .header .navbar-default .navbar-nav > .active > a {
+        background-color: var(--menu-line-color);
+        color: var(--menu-color);
+    }
+}
+
 html[theme='totamjung'] .page-header {
     border-bottom-color: var(--bright-menu-line-color);
 }
 
 html[theme='totamjung'] .panel {
     border: none;
+    box-shadow: 0 0 13px var(--menu-color);
 }
 
 html[theme='totamjung'] .panel-heading {
@@ -208,6 +301,11 @@ html[theme='totamjung'] .panel-heading {
 
 html[theme='totamjung'] .panel-body {
     background-color: var(--menu-color);
+}
+
+html[theme='totamjung'] .panel-body > .content > pre {
+    background-color: black;
+    border: 1px solid var(--menu-line-color);
 }
 
 html[theme='totamjung'] .nav-pills > li > a {
@@ -223,7 +321,7 @@ html[theme='totamjung'] .nav-pills > li.active > a {
 html[theme='totamjung'] .nav-pills > li > a:hover,
 html[theme='totamjung'] .nav-pills > li > a:focus,
 html[theme='totamjung'] .nav-pills > li > a:active {
-    background-color: var(--tab-hover-color);
+    background-color: var(--tab-hover-color) !important;
 }
 
 html[theme='totamjung'] pre {
@@ -304,17 +402,25 @@ html[theme='totamjung'] .result-wa {
     color: rgb(221, 65, 36);
 }
 
-html[theme='totamjung'] .btn.btn-default#favorite_button, 
-html[theme='totamjung'] .btn.btn-default#lang-select-button {
+html[theme='totamjung'] #favorite_button, 
+html[theme='totamjung'] #lang-select-button,
+html[theme='totamjung'] #like-button,
+html[theme='totamjung'] #unlike-button {
     background-color: var(--menu-color);
     color: var(--text-color);
     border: none;
-    transition: 0.25s;
 }
 
-html[theme='totamjung'] .btn.btn-default[data-favorite='1'],
-html[theme='totamjung'] .btn.btn-default .glyphicon {
+html[theme='totamjung'] #favorite_button[data-favorite='1'] {
     color: var(--title-color);
+}
+
+html[theme='totamjung'] #like-button.btn-primary {
+    color: var(--glyphicon-like-color);
+}
+
+html[theme='totamjung'] #unlike-button.btn-danger {
+    color: var(--glyphicon-unlike-color);
 }
 
 html[theme='totamjung'] .table.table-hover > tbody > tr:hover > td,
@@ -353,16 +459,43 @@ html[theme='totamjung'] .table-bordered td {
     border: none;
 }
 
-html[theme='totamjung'] .table-striped {
+html[theme='totamjung'] .table-striped,
+html[theme='totamjung'] .table-bordered {
     box-shadow: 0 0 15px var(--menu-color);
 }
 
-html[theme='totamjung'] .table-striped > tbody > tr:nth-child(odd) > td {
+html[theme='totamjung'] .table-striped > tbody > tr:nth-child(odd) > td,
+html[theme='totamjung'] .table-striped > tbody > tr:nth-child(odd) > th,
+html[theme='totamjung'] .table-bordered > tbody > tr:nth-child(odd) > td,
+html[theme='totamjung'] .table-bordered > tbody > tr:nth-child(odd) > th {
     background-color: var(--menu-color);
 }
 
-html[theme='totamjung'] .table-striped > tbody > tr:nth-child(even) > td {
+html[theme='totamjung'] .table-striped > tbody > tr:nth-child(even) > td,
+html[theme='totamjung'] .table-striped > tbody > tr:nth-child(even) > th,
+html[theme='totamjung'] .table-bordered > tbody > tr:nth-child(even) > td,
+html[theme='totamjung'] .table-bordered > tbody > tr:nth-child(even) > th {
     background-color: var(--secondary-menu-color);
+}
+
+html[theme='totamjung'] .table-striped > tbody > tr.success:nth-of-type(odd) > td,
+html[theme='totamjung'] .table-striped > tbody > tr.success:nth-of-type(odd) > th {
+    background-color: var(--table-notice-color-dark);
+}
+
+html[theme='totamjung'] .table-striped > tbody > tr.success:nth-of-type(even) > td,
+html[theme='totamjung'] .table-striped > tbody > tr.success:nth-of-type(even) > th {
+    background-color: var(--table-notice-color-light);
+}
+
+html[theme='totamjung'] .table-striped > tbody > tr.info:nth-of-type(odd) > td,
+html[theme='totamjung'] .table-striped > tbody > tr.info:nth-of-type(odd) > th {
+    background-color: var(--table-contest-color-dark);
+}
+
+html[theme='totamjung'] .table-striped > tbody > tr.info:nth-of-type(even) > td,
+html[theme='totamjung'] .table-striped > tbody > tr.info:nth-of-type(even) > th {
+    background-color: var(--table-contest-color-light);
 }
 
 html[theme='totamjung'] .table-condensed th,
@@ -372,6 +505,36 @@ html[theme='totamjung'] .table-condensed td {
 
 html[theme='totamjung'] .table-condensed th {
     color: var(--title-color);
+}
+
+
+@media screen and (max-width: 767px) {
+    html[theme='totamjung'] .table-responsive {
+        border: none;
+        box-shadow: 0 0 13px var(--menu-color);
+    }
+}
+
+html[theme='totamjung'] .redactor-box.redactor-styles-on {
+    background-color: var(--menu-color);
+    box-shadow: 0 0 13px var(--menu-color);
+}
+
+html[theme='totamjung'] .redactor-focus.redactor-styles-on,
+html[theme='totamjung'] .redactor-focus:focus.redactor-styles-on {
+    border-color: var(--menu-color) !important;
+}
+
+html[theme='totamjung'] .redactor-toolbar .re-button:nth-child(odd) {
+    background-color: var(--menu-line-color);
+}
+
+html[theme='totamjung'] .redactor-toolbar .re-button:nth-child(even) {
+    background-color: var(--bright-menu-line-color);
+}
+
+html[theme='totamjung'] .redactor-statusbar {
+    background-color: var(--secondary-menu-color);
 }
 
 html[theme='totamjung'] .progress {
@@ -540,6 +703,51 @@ html[theme='totamjung'] .funny-boxes {
     background-color: var(--menu-color);
 }
 
+html[theme='totamjung'] .funny-boxes .btn-u:hover,
+html[theme='totamjung'] .funny-boxes .btn-u:active,
+html[theme='totamjung'] .funny-boxes .btn-u:focus,
+html[theme='totamjung'] form fieldset .btn-u:hover,
+html[theme='totamjung'] form fieldset .btn-u:active,
+html[theme='totamjung'] form fieldset .btn-u:focus {
+    background-color: var(--menu-line-color);
+}
+
+html[theme='totamjung'] .btn-success {
+    background-color: var(--table-notice-color-light);
+}
+
+html[theme='totamjung'] .btn-u-red,
+html[theme='totamjung'] .btn-u-red:hover,
+html[theme='totamjung'] .btn-u-red:focus,
+html[theme='totamjung'] .btn-u-red:active,
+html[theme='totamjung'] .btn-danger,
+html[theme='totamjung'] .btn-danger:hover,
+html[theme='totamjung'] .btn-danger:focus,
+html[theme='totamjung'] .btn-danger:active {
+    background-color: var(--button-red);
+}
+
+html[theme='totamjung'] .btn-u-dark,
+html[theme='totamjung'] .btn-u-dark:hover,
+html[theme='totamjung'] .btn-u-dark:focus,
+html[theme='totamjung'] .btn-u-dark:active {
+    background-color: var(--button-dark);
+}
+
+html[theme='totamjung'] .btn-u-dark-blue,
+html[theme='totamjung'] .btn-u-dark-blue:hover,
+html[theme='totamjung'] .btn-u-dark-blue:focus,
+html[theme='totamjung'] .btn-u-dark-blue:active {
+    background-color: var(--button-darkblue);
+}
+
+html[theme='totamjung'] .btn-u-light-green,
+html[theme='totamjung'] .btn-u-light-green:hover,
+html[theme='totamjung'] .btn-u-light-green:focus,
+html[theme='totamjung'] .btn-u-light-green:active {
+    background-color: var(--button-mint);
+}
+
 html[theme='totamjung'] .funny-boxes-top-sea {
     border-top-color: var(--link-color);
     box-shadow: 0 0 13px var(--menu-color);
@@ -571,6 +779,22 @@ html[theme='totamjung'] .blog-content a {
 
 html[theme='totamjung'] .list-group.sidebar-nav-v1 {
     box-shadow: 0 0 13px var(--menu-color);
+}
+
+html[theme='totamjung'] .list-group {
+    box-shadow: 0 0 13px var(--menu-color);
+}
+
+html[theme='totamjung'] .list-group-item {
+    border: none;
+}
+
+html[theme='totamjung'] .list-group-item:nth-child(odd) {
+    background-color: var(--menu-color);
+}
+
+html[theme='totamjung'] .list-group-item:nth-child(even) {
+    background-color: var(--secondary-menu-color);
 }
 
 html[theme='totamjung'] .list-group.sidebar-nav-v1 > .list-group-item {
@@ -612,6 +836,27 @@ html[theme='totamjung'] .search-block-v2 {
 
 html[theme='totamjung'] .related-search {
     border-bottom-color: var(--bright-menu-line-color);
+    border-right-color: var(--bright-menu-line-color);
+}
+
+html[theme='totamjung'] .footer-v3 .thumb-headline h2 {
+    color: var(--title-color);
+}
+
+html[theme='totamjung'] .footer-v3 .simple-list a {
+    color: var(--link-color);
+}
+
+html[theme='totamjung'] .tab-content {
+    border: 3px solid var(--bright-menu-line-color);
+    margin-top: -2px;
+}
+
+html[theme='totamjung'] .chosen-container .chosen-container-single,
+html[theme='totamjung'] .chosen-drop {
+    background: none;
+    background-color: var(--menu-color) !important;
+    color: var(--text-color);
 }
 
 html[theme='totamjung']::-webkit-scrollbar,
@@ -634,26 +879,4 @@ html[theme='totamjung']::-webkit-scrollbar-thumb,
 html[theme='totamjung'] pre::-webkit-scrollbar-thumb {
     background-color: var(--bright-menu-line-color);
     border-radius: 10px;
-}
-
-.totamjung-menu {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.totamjung-text {
-    opacity: 0;
-    height: 0;
-    transition: 0.3s;
-}
-
-.totamjung-text ul {
-    height: 0;
-}
-
-.open + .totamjung-text {
-    opacity: 1;
-    height: 100%;
 }

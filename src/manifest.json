@@ -18,11 +18,24 @@
             "matches": [
                 "https://www.acmicpc.net/*"
             ],
+            "run_at": "document_start",
             "js": [
-                "content_script.js"
+                "theme_loader.js"
             ],
             "css": [
                 "theme.css"
+            ]
+        },
+        {
+            "matches": [
+                "https://www.acmicpc.net/problem/*"
+            ],
+            "run_at": "document_idle",
+            "js": [
+                "tag_locker.js"
+            ],
+            "css": [
+                "tag_locker.css"
             ]
         }
     ]
