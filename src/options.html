@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="pallette.css" />
+    <link rel="stylesheet" href="options_styles.css" />
+</head>
+
+<body>
+    <h1>
+        <img class="title" src="../images/settings_title.png" />
+    </h1>
+
+    <div class="wrapper">
+        <div class="word-menu">
+            <div class="section-title">
+                <span>알고리즘 추가</span>
+            </div>
+            <div class="algorithm-pool" id="pool"></div>
+            <p>
+                알고 계신 알고리즘을 체크해 주시면, 토탐정이 기억해 두었다가 문제를 풀 때
+                <span class="emphasize">알고리즘 분류를 공개하지 않고 체크해 두신 알고리즘만으로 문제를 풀 수 있는지</span>
+                알려드릴게요.
+            </p>
+        </div>
+        <div class="settings-menu">
+            <div class="section-title">
+                <span>설정</span>
+            </div>
+            <p>
+                알고 계신 알고리즘으로 문제를 풀 수 있는지의 여부를 알려 드릴까요?
+            </p>
+            <label>
+                <input class="hidden radio" type="radio" name="0" value="0" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">항상 알려 줘</span>
+                <br>
+            </label>
+            <label>
+                <input class="hidden radio" type="radio" name="0" value="1" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">메뉴를 클릭했을 때만 알려 줘</span>
+                <br>
+            </label>
+            <label>
+                <input class="hidden radio" type="radio" name="0" value="2" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">알려 주지 마</span>
+                <br>
+            </label>
+            <p>
+                알고리즘 분류를 일정 시간동안 잠궈 드릴까요?
+            </p>
+            <label>
+                <input class="hidden radio" type="radio" name="1" value="0" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">분 동안 잠궈 줘</span>
+                <br>
+            </label>
+            <label>
+                <input class="hidden radio" type="radio" name="1" value="1" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">잠그지 마</span>
+                <br>
+            </label>
+            <p>
+                문제의 티어를 감출까요?
+            </p>
+            <label>
+                <input class="hidden radio" type="radio" name="2" value="0" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">감추되, 메뉴를 클릭해서 볼 수 있게 해줘</span>
+                <br>
+            </label>
+            <label>
+                <input class="hidden radio" type="radio" name="2" value="1" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">분 동안 감춰 주고, 그 이후에는 메뉴를 클릭해서 볼 수 있게 해줘</span>
+                <br>
+            </label>
+            <label>
+                <input class="hidden radio" type="radio" name="2" value="2" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">감추지 마</span>
+                <br>
+            </label>
+            <p>
+                토탐정 전용 테마를 사용하실래요?
+            </p>
+            <label>
+                <input class="hidden radio" type="radio" name="3" value="0" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">좋아!</span>
+                <br>
+            </label>
+            <label>
+                <input class="hidden radio" type="radio" name="3" value="1" />
+                <span class="checkbox-visual"></span>
+                <span class="radio-text">별로...</span>
+                <br>
+            </label>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="options.js"></script>
+</body>
+
+</html>

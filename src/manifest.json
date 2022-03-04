@@ -1,6 +1,6 @@
 {
     "name": "Totamjung",
-    "description": "",
+    "description": "BOJ Algorithm Tag Locker",
     "version": "1.0",
     "manifest_version": 3,
     "action": {},
@@ -23,6 +23,7 @@
                 "theme_loader.js"
             ],
             "css": [
+                "pallette.css",
                 "theme.css"
             ]
         },
@@ -38,5 +39,6 @@
                 "tag_locker.css"
             ]
         }
-    ]
+    ],
+    "options_page": "options.html"
 }
